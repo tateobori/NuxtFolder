@@ -1,0 +1,2 @@
+# NuxtFolder
+NuxtをVscodeでGitと連携する練習をしたい
