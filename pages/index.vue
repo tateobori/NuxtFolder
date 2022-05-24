@@ -1,5 +1,12 @@
 <template>
-  <Tutorial />
+  <div>
+    <h1>Nuxtのトップページです。</h1>
+    <ul>
+      <li>Git</li>
+      <li>Vue</li>
+      <li>Nuxt</li>
+    </ul>
+  </div>
 </template>
 
 <script>
