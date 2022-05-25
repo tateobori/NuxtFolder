@@ -1,16 +1,23 @@
 <template>
   <div>
-    <h1>Nuxtのトップページです。</h1>
-    <ul>
-      <li>Git</li>
-      <li>Vue</li>
-      <li>Nuxt</li>
-    </ul>
+    <h1>RestAPIで読み込みのチェック</h1>
+    <p><input type="button" value="読み込み" @click="vuexRead"></p>
+    <br>
+    <pre>storeの値: {{ $store.state }} </pre>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'IndexPage'
+  data () {
+    return {
+      suuji: 0
+    }
+  },
+  methods: {
+    vuexRead () {
+      this.$store.dispatch('readAction')
+    }
+  }
 }
 </script>

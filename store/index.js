@@ -1,24 +1,41 @@
 export const state = () => ({
-  counter: 0
+  message: '',
+  apiData: null,
+  pickDate: null
 })
 
 export const mutations = {
-  add (state, payload) {
-    state.counter += Number(payload)
+  createMutation (state) {
+    state.message = '登録完了!'
   },
-  increase (state) {
-    state.counter++
-  },
-  decrease (state) {
-    state.counter--
-  },
-  reset (state) {
-    state.counter = 0
+  readMutation (state, payload) {
+    state.apiData = payload
+    state.message = '読み込み完了'
   }
 }
 
+const axios1 = require('axios')
 export const actions = {
-  addAction (data, payload) {
-    data.commit('add', payload)
+  createAction (data, payload) {
+    const url = 'https://umayadia-apisample.azurewebsites.net/api/persons'
+    axios1.post(url, payload)
+      .then((res) => {
+        data.commit('createMutation')
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  },
+  readAction (data) {
+    const url = 'https://umayadia-apisample.azurewebsites.net/api/persons'
+    let payload = null
+    axios1.get(url)
+      .then((res) => {
+        payload = res.data
+        data.commit('readMutation', payload)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   }
 }

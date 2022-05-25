@@ -1,24 +1,20 @@
 <template>
   <div>
-    <h1>ストアに値を渡す</h1>
-    <p>{{ $store.state.counter }}</p>
-    <p>dataの値: {{ $data }}</p>
-    <p>入力値: <input v-model="num" type="text"></p>
-    <input type="button" value="追加" @click="add">
+    <h1>restAPIのトップページ</h1>
+    <ol>
+      <li>登録/create</li>
+      <li>読み込み/read</li>
+      <li>-</li>
+    </ol>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'CounterPage',
+  name: 'IndexPage',
   data () {
     return {
-      num: 1
-    }
-  },
-  methods: {
-    add () {
-      this.$store.commit('add', this.num)
+
     }
   }
 }
