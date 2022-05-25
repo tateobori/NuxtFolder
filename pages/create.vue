@@ -14,8 +14,8 @@ export default {
   data () {
     return {
       person: {
-        name: 'ピカチュウ',
-        note: '人気ポケモン、サトシの相棒',
+        name: 'test man',
+        note: 'sample note',
         age: 10,
         registerDate: '2022-04-26T20:22:13'
       }
